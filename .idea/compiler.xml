@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="aggregator_lib.main" target="1.8" />
+      <module name="aggregator_lib.test" target="1.8" />
+      <module name="bookinggo_technical_test.aggregator.main" target="1.8" />
+      <module name="bookinggo_technical_test.aggregator.test" target="1.8" />
+      <module name="bookinggo_technical_test.aggregator_lib.main" target="1.8" />
+      <module name="bookinggo_technical_test.aggregator_lib.test" target="1.8" />
+      <module name="bookinggo_technical_test.console_app.main" target="1.8" />
+      <module name="bookinggo_technical_test.console_app.test" target="1.8" />
+      <module name="bookinggo_technical_test.rest_api_service.main" target="1.8" />
+      <module name="bookinggo_technical_test.rest_api_service.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

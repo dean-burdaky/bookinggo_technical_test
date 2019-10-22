@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/bookinggo_technical_test.iml" filepath="$PROJECT_DIR$/.idea/bookinggo_technical_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aggregator_lib/bookinggo_technical_test.aggregator.iml" filepath="$PROJECT_DIR$/.idea/modules/aggregator_lib/bookinggo_technical_test.aggregator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aggregator/bookinggo_technical_test.aggregator.main.iml" filepath="$PROJECT_DIR$/.idea/modules/aggregator/bookinggo_technical_test.aggregator.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aggregator/bookinggo_technical_test.aggregator.test.iml" filepath="$PROJECT_DIR$/.idea/modules/aggregator/bookinggo_technical_test.aggregator.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/console_app/bookinggo_technical_test.console_app.iml" filepath="$PROJECT_DIR$/.idea/modules/console_app/bookinggo_technical_test.console_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/console_app/bookinggo_technical_test.console_app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/console_app/bookinggo_technical_test.console_app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/console_app/bookinggo_technical_test.console_app.test.iml" filepath="$PROJECT_DIR$/.idea/modules/console_app/bookinggo_technical_test.console_app.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest_api_service/bookinggo_technical_test.rest_api_service.iml" filepath="$PROJECT_DIR$/.idea/modules/rest_api_service/bookinggo_technical_test.rest_api_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest_api_service/bookinggo_technical_test.rest_api_service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rest_api_service/bookinggo_technical_test.rest_api_service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest_api_service/bookinggo_technical_test.rest_api_service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/rest_api_service/bookinggo_technical_test.rest_api_service.test.iml" />
+    </modules>
+  </component>
+</project>

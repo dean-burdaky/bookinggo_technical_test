@@ -1,2 +1,2 @@
-# bookinggo_technical_test
+# BookingGo Technical Test
 Technical test for BookingGo application.
