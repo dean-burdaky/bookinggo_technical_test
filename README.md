@@ -8,6 +8,14 @@ Technical test for BookingGo application.
 > **WARNING** This project uses Java 1.8 and will need JDK to build. In addition, the gradle wrapper may download the
 > gradle distribution package, so make sure you have some space on your drive for that.
 
+Gradle will pull all dependencies upon running build tasks.
+
+#### Special case for the first task in Part 1
+I've completely forgotten about the first task in part 1 until a couple of days before the submission deadline. I've
+created a quick solution for that but kept it on the unstable branch since it doesn't have the same level of code
+coverage. From limited manual testing, the software seems stable enough to run. So for the first task in Part 1, you
+will need to pull/download the commit from the unstable branch. The run commands will have a separate section.
+
 #### Windows
 Make sure you have access to a command line or terminal that can run batch files with parameters.
 
@@ -47,6 +55,23 @@ Open a terminal and go the project root. Run
 ./gradlew run --args="{pickup lat} {pickup lon} {dropoff lat} {dropoff lon} {capacity}"
 ```
 For more information on the parameters, go [here](#Information-on-the-parameters).
+
+### Part 1 on the unstable branch
+If you have not visited this [special case](#Special-case-for-the-first-task-in-Part-1) section, then do so before
+reading this section.
+
+Running on the unstable branch is the similar to running on the master, but instead: you run the
+`:console_app_dave_taxis:run` task (and omit the `{capacity}` parameter) for the console app that only print's Dave's
+services like
+```
+WINDOWS: gradlew.bat :console_app_dave_taxis:run --args="{pickup lat} {pickup lon} {dropoff lat} {dropoff lon}"
+LINUX: ./gradlew :console_app_dave_taxis:run --args="{pickup lat} {pickup lon} {dropoff lat} {dropoff lon}"
+```
+and `:console_app:run` for extended console app like
+```
+WINDOWS: gradlew.bat :console_app:run --args="{pickup lat} {pickup lon} {dropoff lat} {dropoff lon} {capacity}"
+LINUX: ./gradlew :console_app:run --args="{pickup lat} {pickup lon} {dropoff lat} {dropoff lon} {capacity}"
+```
 
 ### Part 2
 
