@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'distribution'
+}
+
+dependencies {
+    implementation project(':aggregator_dave_taxis')
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.0'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+test {
+    // Use junit platform for unit tests
+    useJUnitPlatform()
+}
+
+application {
+    mainClassName = 'application.ConsoleApplication'
+}
