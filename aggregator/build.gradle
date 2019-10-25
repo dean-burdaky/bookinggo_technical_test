@@ -1,5 +1,6 @@
 plugins {
     id 'java-library'
+    id 'java-library-distribution'
 }
 
 dependencies {
@@ -10,6 +11,9 @@ dependencies {
     testImplementation 'org.mockito:mockito-junit-jupiter:3.1.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
 }
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 test {
     // Use junit platform for unit tests

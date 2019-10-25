@@ -9,6 +9,7 @@ buildscript {
 
 plugins {
     id 'java'
+    id 'distribution'
 }
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
@@ -27,6 +28,9 @@ dependencies {
     testImplementation 'org.mockito:mockito-junit-jupiter:3.1.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
 }
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 ext['junit-jupiter.version'] = '5.4.2'
 test {
