@@ -1,23 +1,22 @@
 # BookingGo Technical Test
-Technical test for BookingGo application.
+Technical test for the BookingGo application. Contains a few subprojects:
+1) Base aggregator library
+2) Console application to pull Dave's Taxis services.
+3) Console application to list best service options from multiple service suppliers.
+4) Web-based REST application that functions in the same way as (3).
 
-## Project Submission
+## Submission Instructions
 
 ### Setup
 
-> **WARNING** This project uses Java 1.8 and will need JDK to build. In addition, the gradle wrapper may download the
+> **IMPORTANT** This project uses Java 1.8 and will need a JDK to build. In addition, the gradle wrapper may download the
 > gradle distribution package, so make sure you have some space on your drive for that.
 
 Gradle will pull all dependencies upon running build tasks.
 
-#### Special case for the first task in Part 1
-I've completely forgotten about the first task in part 1 until a couple of days before the submission deadline. I've
-created a quick solution for that but kept it on the unstable branch since it doesn't have the same level of code
-coverage. From limited manual testing, the software seems stable enough to run. So for the first task in Part 1, you
-will need to pull/download the commit from the unstable branch. The run commands will have a separate section.
-
 #### Windows
-Make sure you have access to a command line or terminal that can run batch files with parameters.
+Make sure you have access to a command line or terminal that can run batch files with parameters. Also, how you execute
+batch scripts may vary on the command line or terminal you use, refer to your command line's/terminal's documentation.
 
 #### Linux
 Make sure you have access to a terminal that can run shell scripts with parameters.
@@ -39,75 +38,54 @@ rightmost character is now `x`.
 
 ### Part 1
 
-#### Windows
+#### Console application to print the search results for Dave's Taxis
 Open a command line or a terminal and go to the project root. Run
 ```
-gradlew.bat run --args="{pickup lat} {pickup lon} {dropoff lat} {dropoff lon} {capacity}"
-```
-*Note: Depending on which terminal/command line you use (like Command Prompt or MinGW bash), you may have to prefix the
-command with a `./`.*
-
-For more information on the parameters, go [here](#Information-on-the-parameters).
-
-#### Linux
-Open a terminal and go the project root. Run
-```
-./gradlew run --args="{pickup lat} {pickup lon} {dropoff lat} {dropoff lon} {capacity}"
+WINDOWS: gradlew.bat :dave_console_app:run --args="{pickup lat} {pickup lon} {dropoff lat} {dropoff lon}"
+LINUX: ./gradlew :dave_console_app:run --args="{pickup lat} {pickup lon} {dropoff lat} {dropoff lon}"
 ```
 For more information on the parameters, go [here](#Information-on-the-parameters).
 
-### Part 1 on the unstable branch
-If you have not visited this [special case](#Special-case-for-the-first-task-in-Part-1) section, then do so before
-reading this section.
-
-Running on the unstable branch is the similar to running on the master, but instead: you run the
-`:console_app_dave_taxis:run` task (and omit the `{capacity}` parameter) for the console app that only print's Dave's
-services like
-```
-WINDOWS: gradlew.bat :console_app_dave_taxis:run --args="{pickup lat} {pickup lon} {dropoff lat} {dropoff lon}"
-LINUX: ./gradlew :console_app_dave_taxis:run --args="{pickup lat} {pickup lon} {dropoff lat} {dropoff lon}"
-```
-and `:console_app:run` for extended console app like
+#### Console application to filter by number of passengers
+Open a command line or a terminal and go to the project root. Run
 ```
 WINDOWS: gradlew.bat :console_app:run --args="{pickup lat} {pickup lon} {dropoff lat} {dropoff lon} {capacity}"
 LINUX: ./gradlew :console_app:run --args="{pickup lat} {pickup lon} {dropoff lat} {dropoff lon} {capacity}"
 ```
+For more information on the parameters, go [here](#Information-on-the-parameters).
 
 ### Part 2
-
-#### Windows
 Open a command line or a terminal and go to the project root. Run
 ```
-gradlew.bat bootRun
+WINDOWS: gradlew.bat bootRun
+LINUX: ./gradlew bootRun
 ```
-*Note: Depending on which terminal/command line you use (like Command Prompt or MinGW bash), you may have to prefix the
-command with a `./`.*
+You can use a web browser or, if you have `curl` installed (mainly linux/unix feature), run that
+instead to connect to the server.
 
-You can use a [web browser](#Web-Browser) to connect with the server.
-
-#### Linux
-Open a terminal and go the project root. Run
-```
-./gradlew bootRun
-```
-You can use a [web browser](#Web-Browser) or `curl`, if you have it installed, to connect with the server.
-
-##### Using Curl
-To guarantee you are viewing the response as a JSON payload, you can use the `application/json` content type. Run
-```
-curl --get --header="application/json" "http://{host}:8080/?pickup.lat={pickup lat}&pickup.lon={pickup lon}&dropoof.lat={dropoff lat}&dropoff.lon={dropoff lon}&capacity={capacity}"
-```
-For information on the parameters (including `{host}`) can be found [here](#Information-on-the-parameters).
-
-#### Web Browser
-Before going to this section, complete either the [Windows](#Windows-2) or the [Linux](#Linux-2) steps.
-
-In the address bar, enter
+#### Web browser
+Open a web browser and in the address bar, enter
 ```
 http://{host}:8080/?pickup.lat={pickup lat}&pickup.lon={pickup lon}&dropoof.lat={dropoff lat}&dropoff.lon={dropoff lon}&capacity={capacity}
 ```
+Information on the parameters can be found [here](#Information-on-the-parameters).
 
-For information on the parameters (including `{host}`) can be found [here](#Information-on-the-parameters).
+##### Example
+```
+http://localhost:8080/?pickup.lat=10&pickup.lon=135.5&dropoff.lat=-90.00&dropoff.lon=0.00127&capacity=3
+```
+
+#### Curl command
+In a command line or terminal, run
+```
+curl -G -H "application/json" "http://{host}:8080/?pickup.lat={pickup lat}&pickup.lon={pickup lon}&dropoof.lat={dropoff lat}&dropoff.lon={dropoff lon}&capacity={capacity}"
+```
+Information on the parameters can be found [here](#Information-on-the-parameters).
+
+##### Example
+```
+curl -G -H "application/json" "http://localhost:8080/?pickup.lat=10&pickup.lon=135.5&dropoff.lat=-90.00&dropoff.lon=0.00127&capacity=3"
+```
 
 ### Information on the parameters
 * `{pickup lat}` - The pick up latitude. Restricted from -90 to 90 (inclusively).
@@ -115,6 +93,5 @@ For information on the parameters (including `{host}`) can be found [here](#Info
 * `{dropoff lat}` - The drop off latitude. Also, restricted from -90 to 90 (inclusively).
 * `{dropoff lon}` - The drop off longitude. Also, restricted from -180 to 180 (inclusively).
 * `{capacity}` - The number of seats required. Needs to be at least 1 seat required.
-*  `{host}` *(Part 2 only)* -  The host name or domain name of the service. Will most likely be `localhost` if the
-request is being made from the same machine.
- 
+* `{host}` - The host name or domain name of the service. Will most likely be `localhost` if the request is being made
+  from the same machine.
