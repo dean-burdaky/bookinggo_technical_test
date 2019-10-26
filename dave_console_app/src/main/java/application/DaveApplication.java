@@ -9,40 +9,35 @@ import java.io.PrintStream;
 import java.util.List;
 import java.util.logging.LogManager;
 
-public class ConsoleApplication
+public class DaveApplication extends ConsoleApplication
 {
-    private final CommandLineArguments cla;
-    private final PrintStream out;
-    public ConsoleApplication(CommandLineArguments cla, PrintStream out)
+    public DaveApplication(DaveCommandLineArguments dcla, PrintStream out)
     {
-        if (cla == null) throw new NullArgumentException(0, CommandLineArguments.class);
-        else if (out == null) throw new NullArgumentException(1, PrintStream.class);
-        else if (cla.getReadingArgsFailed()) throw new FailedCLAException();
-
-        this.cla = cla;
-        this.out = out;
+        super(dcla.getCLA(), out);
     }
 
     public static void main(final String[] args)
     {
         LogManager.getLogManager().reset();
-        CommandLineArguments cla = new CommandLineArguments(System.err, args);
-        if (!cla.getReadingArgsFailed())
+        DaveCommandLineArguments dcla = new DaveCommandLineArguments(System.err, args);
+        if (!dcla.getCLA().getReadingArgsFailed())
         {
-            ConsoleApplication app = new ConsoleApplication(cla, System.out);
+            DaveApplication app = new DaveApplication(dcla, System.out);
             app.run();
         }
 
     }
 
+    @Override
     public void run()
     {
+        CommandLineArguments cla = getCLA();
         ServiceAggregator aggregator = new ServiceAggregator(
-                new QueryConverter(),
+                new DaveConverter(),
                 new ServiceRequester(new ServiceConnectionFactory()),
                 new ResultsSplitter(),
-                new CapacityFilter(),
-                new SupplierResolver(),
+                new NoFilter(),
+                new NoResolver(),
                 new OptionsSorter());
         GeneralQuery query = new GeneralQuery(
                 cla.pickupLat, cla.pickupLon,
@@ -51,21 +46,12 @@ public class ConsoleApplication
         printResults(aggregator.aggregate(query));
     }
 
+    @Override
     public void printResults(List<ServiceOption> serviceOptions)
     {
         if (serviceOptions == null) throw new NullArgumentException(0, List.class);
 
         for (ServiceOption option : serviceOptions)
-            out.println(option.carType + " - " + option.supplier.name + " - " + option.price);
-    }
-
-    protected final CommandLineArguments getCLA()
-    {
-        return cla;
-    }
-
-    protected final PrintStream getOut()
-    {
-        return out;
+            getOut().println(option.carType + " - " + option.price);
     }
 }

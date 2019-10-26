@@ -15,13 +15,13 @@
     <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.4.2" level="project" />
     <orderEntry type="library" name="Gradle: org.mockito:mockito-junit-jupiter:3.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.10.0" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.4.2" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.10.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.4.2" level="project" />
     <orderEntry type="library" name="Gradle: org.junit.platform:junit-platform-commons:1.4.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apiguardian:apiguardian-api:1.0.0" level="project" />
     <orderEntry type="library" name="Gradle: org.opentest4j:opentest4j:1.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.mockito:mockito-core:3.1.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.platform:junit-platform-engine:1.4.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.mockito:mockito-core:3.1.0" level="project" />
     <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy:1.9.10" level="project" />
     <orderEntry type="module" module-name="bookinggo_technical_test.aggregator.main" />
     <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy-agent:1.9.10" level="project" />

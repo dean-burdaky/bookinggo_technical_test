@@ -9,4 +9,4 @@
 
 rootProject.name = 'bookinggo_technical_test'
 
-include 'aggregator', 'console_app', 'rest_api_service'
+include 'aggregator', 'console_app', 'rest_api_service', 'dave_console_app'

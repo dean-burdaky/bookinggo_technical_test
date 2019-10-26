@@ -6,10 +6,16 @@
       <module name="aggregator_lib.test" target="1.8" />
       <module name="bookinggo_technical_test.aggregator.main" target="1.8" />
       <module name="bookinggo_technical_test.aggregator.test" target="1.8" />
+      <module name="bookinggo_technical_test.aggregator_dave_taxis.main" target="1.8" />
+      <module name="bookinggo_technical_test.aggregator_dave_taxis.test" target="1.8" />
       <module name="bookinggo_technical_test.aggregator_lib.main" target="1.8" />
       <module name="bookinggo_technical_test.aggregator_lib.test" target="1.8" />
       <module name="bookinggo_technical_test.console_app.main" target="1.8" />
       <module name="bookinggo_technical_test.console_app.test" target="1.8" />
+      <module name="bookinggo_technical_test.console_app_dave_taxis.main" target="1.8" />
+      <module name="bookinggo_technical_test.console_app_dave_taxis.test" target="1.8" />
+      <module name="bookinggo_technical_test.dave_console_app.main" target="1.8" />
+      <module name="bookinggo_technical_test.dave_console_app.test" target="1.8" />
       <module name="bookinggo_technical_test.rest_api_service.main" target="1.8" />
       <module name="bookinggo_technical_test.rest_api_service.test" target="1.8" />
     </bytecodeTargetLevel>

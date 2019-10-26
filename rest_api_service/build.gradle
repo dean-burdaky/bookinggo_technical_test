@@ -36,7 +36,3 @@ ext['junit-jupiter.version'] = '5.4.2'
 test {
     useJUnitPlatform()
 }
-
-task('runPart2', group: 'Technical Test') {
-    dependsOn bootRun
-}

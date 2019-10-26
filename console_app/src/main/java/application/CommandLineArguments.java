@@ -7,13 +7,13 @@ import java.util.logging.Logger;
 
 import static aggregator.data.GeneralQuery.*;
 
-public final class CommandLineArguments
+public class CommandLineArguments
 {
     public static final String SHORT_MIN_LAT = String.format("%.0f", MIN_LATITUDE);
     public static final String SHORT_MAX_LAT = String.format("%.0f", MAX_LATITUDE);
     public static final String SHORT_MIN_LON = String.format("%.0f", MIN_LONGITUDE);
     public static final String SHORT_MAX_LON = String.format("%.0f", MAX_LONGITUDE);
-    private static final int EXPECTED_ARGUMENT_COUNT = 5;
+    protected static final int EXPECTED_ARGUMENT_COUNT = 5;
     private static final Logger logger = Logger.getLogger(CommandLineArguments.class.getName());
 
     public final float pickupLat, pickupLon, dropoffLat, dropoffLon;
@@ -55,7 +55,7 @@ public final class CommandLineArguments
         }
     }
 
-    private void checkArgLength(String[] args)
+    protected void checkArgLength(String[] args)
     {
         if (args.length < EXPECTED_ARGUMENT_COUNT)
         {
@@ -71,7 +71,7 @@ public final class CommandLineArguments
         setReadingArgsFailed(true);
     }
 
-    private float parseFloatArg(final int position, final String arg)
+    protected float parseFloatArg(final int position, final String arg)
     {
         try
         {
@@ -87,7 +87,7 @@ public final class CommandLineArguments
         }
     }
 
-    private int parseIntArg(final int position, final String arg)
+    protected int parseIntArg(final int position, final String arg)
     {
         try
         {
@@ -103,7 +103,7 @@ public final class CommandLineArguments
         }
     }
 
-    private void checkLatRange(final int position, final float lat)
+    protected void checkLatRange(final int position, final float lat)
     {
         if (lat < MIN_LATITUDE || lat > MAX_LATITUDE)
         {
@@ -113,7 +113,7 @@ public final class CommandLineArguments
         }
     }
 
-    private void checkLonRange(final int position, final float lon)
+    protected void checkLonRange(final int position, final float lon)
     {
         if (lon < MIN_LONGITUDE || lon > MAX_LONGITUDE)
         {
@@ -123,7 +123,7 @@ public final class CommandLineArguments
         }
     }
 
-    private void checkCapacityThreshold(final int position, final int capacity)
+    protected void checkCapacityThreshold(final int position, final int capacity)
     {
         if (capacity < MIN_CAPACITY)
         {
@@ -133,7 +133,7 @@ public final class CommandLineArguments
         }
     }
 
-    private void printError(String... message)
+    protected void printError(String... message)
     {
         for (String line : message) err.println(line);
     }
@@ -143,7 +143,7 @@ public final class CommandLineArguments
         return readingArgsFailed;
     }
 
-    private void setReadingArgsFailed(final boolean readingArgsFailed)
+    protected final void setReadingArgsFailed(final boolean readingArgsFailed)
     {
         this.readingArgsFailed = readingArgsFailed;
     }
